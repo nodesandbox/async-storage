@@ -27,9 +27,6 @@
     "url": "https://github.com/@nodesandbox/async-storage/issues"
   },
   "homepage": "https://github.com/@nodesandbox/async-storage#readme",
-  "dependencies": {
-    "async_hooks": "^2.0.0"
-  },
   "devDependencies": {
     "typescript": "^5.6.3"
   },
