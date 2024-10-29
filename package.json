@@ -7,7 +7,7 @@
     "access": "public"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "tsc",
     "prepublishOnly": "npm run build",
     "version": "npm version"
@@ -31,6 +31,9 @@
   },
   "homepage": "https://github.com/nodesandbox/async-storage#readme",
   "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
   },
   "files": [
@@ -38,5 +41,9 @@
     "LICENSE",
     "README.md",
     "CONTRIBUTING.md"
-  ]
+  ],
+  "dependencies": {
+    "async_hooks": "^1.0.0",
+    "jest": "^29.7.0"
+  }
 }
