@@ -7,10 +7,8 @@ jest.mock('async_hooks', () => {
     return {
       getStore: jest.fn(() => storeMap),
       run: jest.fn((store, callback) => {
-        // Crée un nouveau store pour chaque appel à run
         const newStoreMap = new Map<string, any>();
         storeMap.set('store', newStoreMap);
-        // Appel du callback passé en paramètre
         if (typeof callback === 'function') {
           callback();
         } else {
