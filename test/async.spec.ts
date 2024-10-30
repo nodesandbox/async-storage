@@ -32,26 +32,26 @@ describe('AsyncStorageService', () => {
     service = AsyncStorageService.getInstance();
   });
 
-  it('Vérification des constantes pour voir si elles pointent vers la même mémoire', () => {
+  it('Verification of constants to check if they point to the same memory', () => {
     const instance1 = AsyncStorageService.getInstance();
     const instance2 = AsyncStorageService.getInstance();
     expect(instance1).toBe(instance2);
   });
 
-  it('Vérification pour voir si la valeur stockée est la valeur de la clé', () => {
+  it('Verification to check if the stored value matches the keys value', () => {
     service.run(() => {
       service.set('key', 'value');
       expect(service.get('key')).toBe('value');
     });
   });
 
-  it('devrait retourner undefined si la clé n’est pas dans le contexte', () => {
+  it('Should return undefined if the key is not present in the context', () => {
     service.run(() => {
       expect(service.get('nonExistentKey')).toBeUndefined();
     });
   });
 
-  it('devrait échouer si les valeurs des différentes runs correspondent', () => {
+  it('Should fail if values from different runs match', () => {
     let value1 = "";
     let value2 = "";
 
@@ -64,9 +64,6 @@ describe('AsyncStorageService', () => {
       service.set('key1', 'value2');
       value2 = service.get('key1');
     });
-
-    console.log("❌❌❌❌", value1);
-    console.log("➡️➡️➡️➡️", value2);
 
     expect(value1).not.toBe(value2);
   });
